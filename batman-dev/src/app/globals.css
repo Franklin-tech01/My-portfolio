@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--background: #ffffff;
+	--foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
+}
+
+body {
+	color: var(--foreground);
+	background: var(--background);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
+}
+
+/* styles/global.css */
+.typewriter h1 {
+	font-family: "Courier", monospace;
+	font-size: 24px;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 3px solid black; /* Cursor effect */
+	width: 15ch; /* Adjust this according to the length of your text */
+	animation: typing 3.5s steps(15), blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 200px;
+	} /* Adjust width based on your text length */
+}
+
+@keyframes blink {
+	from,
+	to {
+		border-color: transparent;
+	}
+	60% {
+		border-color: black;
+	}
+}
